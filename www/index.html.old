@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
+		<style>
+		.ui-btn.ui-corner-none {
+			border-radius: 0;
+		}
+		</style>
+		<!-- 
+			Original Css
+			<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+			Deu Certo:
+			<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css">
+		-->
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
+		<script type="text/javascript" src="js/master.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<!-- 
+			Original JS
+			<script src="js/jquery.js"></script>
+			<script src="js/master.js"></script>
+			<script src="js/jquery.mobile-1.4.5.min.js"></script>
+			Deu Certo:
+			<script type="text/javascript" src="js/jquery-1.9.1.js"></script>			
+			<script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
+		-->
+    </head>
+    <body>
+		<div data-role="page" id="netstudent_main">
+			<div data-role="header" data-theme="a" data-position="fixed">
+			  <!--<a href="#home" data-icon="home" data-iconpos="notext">Home</a>-->
+			  <a data-icon="delete" class="ui-btn-right" data-transition="flip" data-theme="a" id="btnExit" data-corners="false" onclick="FecharApp();">Sair</a>
+			  <h3>NetStudent Facimp</h3>      
+			</div>
+			<div data-role="content" class="ui-content" role="main">
+				<fieldset>
+					<label for="mat">Matricula:</label>
+					<input type="number" name="mat" id="mat" value=""  />
+					<label for="senha">Senha:</label>
+					<input type="password" name="senha" id="senha" value="" />
+					<a id="consultar" data-role="button" data-inline="true" data-icon="search" data-iconpos="left" data-corners="false">Consultar Notas</a>
+					<label class="ui-corner-none"><input type="checkbox" name="checkbox-0" id="chkSave" >Salvar Dados</label>										
+					<hr />
+				</fieldset>
+				
+				<p><b>Salvos: <span id="qtdereg">(Max: 1 de 2)</span></b></p><br>
+				
+				<ul id="lista" data-role="listview" data-divider-theme="a" class="ui-listview">			
+					<li>
+						<div class="ui-btn-inner ui-li" id="listCad">
+						</div>
+					</li>
+				</ul>				
+			</div>
+			<div data-role="footer" class="ui-bar" data-theme="a" data-position="fixed" data-id="footer">
+			  <a href="#" data-icon="info" data-role="button" data-inline="true" onclick="ExibeInfo();">Sobre</a>
+			</div>
+		</div>
+		
+		<div data-role="page" id="netstudent_extrato"> 
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#" data-icon="home" data-iconpos="notext" data-role="button" data-inline="true" onclick="ExibeHome();">Inicio</a>
+				<h1>NetStudent Facimp</h1> 		
+			</div>		
+			<h3><center>Extrato de Notas</center></h3>
+			<div data-role="content" class="ui-content" role="main">
+				<ul data-role="listview" data-divider-theme="c" class="ui-listview" id='lv_extrato'>
+					<li id="dvaluno" data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c ui-first-child">Aluno: <undefined></li>
+					<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-c">Disciplinas:</li>				
+					<li class="ui-li-static ui-body-inherit ui-last-child">
+						<div class="ui-btn-inner ui-li">
+							<div id="data_extrato" class="ui-btn-text">								
+								<ul data-role="listview" id="listView1"></ul>								
+							</div>		
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div data-role="footer" class="ui-bar" data-theme="a" data-position="fixed" data-id="footer">
+			  <a href="#" data-icon="info" data-role="button" data-inline="true" onclick="ExibeInfo();">Sobre</a>
+			</div>
+		</div>       
+		<div data-role="page" id="info"> 
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#" data-icon="home" data-iconpos="notext" data-role="button" data-inline="true" onclick="ExibeHome();">Inicio</a>
+				<h1>NetStudent Facimp</h1> 		
+			</div>		
+			<h3><center>Informa&ccedil;&otilde;es</center></h3>
+			<div data-role="content" class="ui-content" role="main">
+				<center>
+				Este App tem como objetivo facilitar o acesso dos alunos ao extrato de suas notas no sistema NetStudent
+				utilizado pela Facimp.<br /><br />
+				Como o sistema(NetStudent) nao possui uma interface muito amigável para ser acessada pelos dispositivos móveis, surgiu
+				a necessidade da criação deste aplicativo.<br /><br />
+				Só é necessário que seja informado sua matricula e sua senha, não gravamos nada em servidores, os dados salvos <br />
+				e consultados por você somente estaram salvos no seu proprio aparelho.<br /><br />        
+				O App só serve de camada de intermediação entre o sistema e você aluno, para que tenha mais facilidade em sua consulta.
+				</center>
+			</div>		
+		</div>   
+		<div data-role="page" id="error">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#" data-icon="home" data-iconpos="notext" data-role="button" data-inline="true" onclick="ExibeHome();">Inicio</a>
+				<h1>NetStudent Facimp</h1> 		
+			</div>
+			<h3><center>Ops! Aconteceu um Erro.</center></h3>
+			<div data-role="content" class="ui-content" role="main" id="errorContent">
+			</div>
+			<div data-role="footer" class="ui-bar" data-theme="a" data-position="fixed" data-id="footer">
+			  <a href="#" data-icon="info" data-role="button" data-inline="true" onclick="ExibeInfo();">Sobre</a>
+			</div>
+		</div>
+	</body>
+</html>
