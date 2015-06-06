@@ -1,4 +1,4 @@
-# NetStudent
+# NetStudentWP
 PhoneGap App para Extrato de Notas do Sistema NetStudent
 
 Este App foi desenvolvido utilizando o PhoneGap e Jquery Mobile.
@@ -11,4 +11,9 @@ abrir a página de web deste sistema.
 somente um JSON é retornado.
 
 Projeto será apresentado no DeepDay, evento que ocorrerá na FACIMP (Faculdade de Imperatriz) 
-nos dias xx, xx de Junho de 2015.
+no dia 13 de Junho de 2015.
+
+Nesta versão para windows phone foi utilizado:
+JQM 1.3.2
+jQuery 1.9.1
+PhoneGap
