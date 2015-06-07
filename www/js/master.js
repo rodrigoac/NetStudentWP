@@ -219,8 +219,8 @@
 				
 		$.ajax({
 			type: 'GET',
-			//url: "http://www.aisiz.org/webservice/netstudent/NetStudent.php?matricula="+matricula+"&senha="+senha,
-			url: "http://localhost/App/TesteWP/www/json_falso.php",
+			url: "http://www.aisiz.org/webservice/netstudent/NetStudent.php?matricula="+matricula+"&senha="+senha,
+			//url: "http://localhost/App/TesteWP/www/json_falso.php",
 			success: function(data){				
 				var html = '';								
 				var json = JSON.parse(data);				
