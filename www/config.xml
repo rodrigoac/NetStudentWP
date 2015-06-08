@@ -1,14 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.rodrigoac.NetStudent" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>NetStudent</name>
+<widget id="com.rodrigoac.netstudent" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>NetStudentWP</name>
     <description>
-        App para extrato de notas do NetStudent.
+        App para Windows Phone para extrato de notas do NetStudent.
     </description>
     <author email="rodrigoalmeida.c@gmail.com" href="http://rodrigoac.com">
         RodrigoAC
     </author>
     <content src="index.html" />
+<<<<<<< HEAD
 	<feature name="http://api.phonegap.com/1.0/network"/>
+=======
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <preference name="phonegap-version" value="3.5.0" />
+>>>>>>> 11b77529e85ad42ca04589936cc130171e0da073
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
