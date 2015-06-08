@@ -216,7 +216,9 @@
 	/*Para funcionar deve especificar o header <?php header('Access-Control-Allow-Origin: *'); ?> na api! (NetStudent.php)*/
 	function PegaExtrato(matricula,senha){		
 		ExibeLoading();
-				
+		//Indicacao do site: http://shareourideas.com/2012/03/04/phonegap-and-jquery-ajax-call-post-in-windows-phone/
+		$.support.cors = true;	
+		///////////////////////
 		$.ajax({
 			type: 'GET',
 			url: "http://www.aisiz.org/webservice/netstudent/NetStudent.php?matricula="+matricula+"&senha="+senha,
